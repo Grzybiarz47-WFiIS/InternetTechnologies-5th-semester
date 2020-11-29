@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="index_xml_style.css" ?>
+
+<root>
+    <header>
+        <title>Techniki internetowe 2020</title>
+        <name>Jan Zajda</name>
+    </header>
+    <body>
+        <lab>
+            <date>Lab01 - 07.10.2020</date>
+            <topic>Język HTML5 i arkusze styli CSS</topic>
+            <link>ćwiczenie5</link>
+        </lab>
+        <lab>
+            <date>Lab02 - 14.10.2020</date>
+            <topic>Język XML</topic>
+            <link>index.xml</link>
+        </lab>
+        <lab>
+            <date>Lab03 - 21.10.2020</date>
+            <topic>PaaS - technologia IBM Cloud</topic>
+            <link>Zadanie3</link>
+        </lab>
+    </body>
+</root>

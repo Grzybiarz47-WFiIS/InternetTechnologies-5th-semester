@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zadanie JavaScript</title>
+        <script src="lab06.js"></script>
+        <link rel="StyleSheet" href="lab06.css" type="text/css"/>
+    </head>
+    <header>
+        <form id="firstButton" action="lab06.html">
+            <input type="submit" class="button" id="show" value="Formularz"/>
+        </form>
+        <form id="secondButton" action="../../cgi-bin/lab06_table.py">
+            <input type="submit" class="button" id="show" value="Lista osób"/>
+        </form>
+    </header>
+    <body>
+        <form name="insertData" onSubmit="return nameCheck()" action="../../cgi-bin/lab06.py" method="GET">
+            <p>Imię: (pole wymagane)</p>
+            <input type="text" name="firstName"/>
+            <div class="alert" id="alert1"></div>
+            <p>Nazwisko: (pole wymagane)</p>
+            <input type="text" name="lastName"/>
+            <div class="alert" id="alert2"></div>
+            <p>Adres e-mail: (pole wymagane)</p>
+            <input type="text" name="email"/>
+            <div class="alert" id="alert3"></div>
+            <p>Rok studiów: (pole wymagane)</p>
+            <select name="selectYear">
+                <option value="0" selected>Wybierz rok</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <div class="alert" id="alert4"></div>
+            <p></p>
+            <input type="submit" class="button" id="submit" name="submitButton" value="Wyślij"/>
+        </form>
+    </body>
+</html>

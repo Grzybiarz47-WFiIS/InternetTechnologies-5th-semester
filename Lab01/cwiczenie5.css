@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(60, 103, 128);
+}
+fieldset{
+    border: 3px solid maroon;
+    background-color: white;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    width: 80%;
+    margin: auto;
+    padding: 0px;
+}
+#seal_picture{
+    border: 3px solid blue;
+    position: fixed;
+    width: 25%;
+    margin-left: 55%;
+}
+table{
+    border: 3px solid blue;
+    border-collapse: collapse;
+    width: 25%;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 20%;
+    margin-top: 25px;
+}
+tbody tr:nth-child(odd){
+    background-color: lightblue;
+}
+tbody tr:nth-child(even){
+    background-color: green;
+}
+#head_row{
+    background-color: aqua;
+}
+.foot_row{
+    background-color: coral;
+}
+.wide_span_row{
+    background-color: violet;
+}

@@ -1,0 +1,33 @@
+root{
+    background-color: lightblue;
+}
+header, body{
+    border: 3px solid maroon;
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    padding: 20px;
+    margin: 10px;
+}
+header{
+    background-color: white;
+}
+body{
+    background-color: coral;
+}
+title{
+    font-size: 30px;
+}
+name, date{
+    display: block;
+    font-weight: bold;
+}
+lab{
+    display: block;
+    margin: 10px;
+}
+link{
+    color: blue;
+    text-decoration: underline;
+    font-style: italic;
+}

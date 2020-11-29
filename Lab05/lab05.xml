@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="lab05.xsl" ?>
+
+<storage>
+    <group>
+        <title>Napoje</title>
+        <product>
+            <lp>1</lp>
+            <name>Pepsi</name>
+            <number>67</number>
+            <price>4.99</price>
+        </product>
+        <product>
+            <lp>2</lp>
+            <name>Coca-Cola</name>
+            <number>89</number>
+            <price>5.99</price>
+        </product>
+        <product>
+            <lp>3</lp>
+            <name>Woda gazowana</name>
+            <number>102</number>
+            <price>1.29</price>
+        </product>
+        <product>
+            <lp>4</lp>
+            <name>Woda niegazowana</name>
+            <number>12</number>
+            <price>1.09</price>
+        </product>
+        <product>
+            <lp>5</lp>
+            <name>Sok pomarańczowy</name>
+            <number>34</number>
+            <price>3.29</price>
+        </product>
+        <product>
+            <lp>6</lp>
+            <name>Piwo Perła Export</name>
+            <number>7</number>
+            <price>2.79</price>
+        </product>
+    </group>
+    <group>
+        <title>Czekolady</title>
+        <product>
+            <lp>1</lp>
+            <name>Wawel</name>
+            <number>74</number>
+            <price>2.39</price>
+        </product>
+        <product>
+            <lp>2</lp>
+            <name>Wedel</name>
+            <number>12</number>
+            <price>3.29</price>
+        </product>
+        <product>
+            <lp>3</lp>
+            <name>Milka</name>
+            <number>56</number>
+            <price>4.49</price>
+        </product>
+    </group>
+    <group>
+        <title>Chipsy</title>
+        <product>
+            <lp>1</lp>
+            <name>Lay's</name>
+            <number>16</number>
+            <price>4.99</price>
+        </product>
+        <product>
+            <lp>2</lp>
+            <name>Top Chips</name>
+            <number>9</number>
+            <price>2.65</price>
+        </product>  
+        <product>
+            <lp>3</lp>
+            <name>Crunchips</name>
+            <number>101</number>
+            <price>4.49</price>
+        </product>
+        <product>
+            <lp>4</lp>
+            <name>Starchips</name>
+            <number>116</number>
+            <price>2.50</price>
+        </product>
+    </group>
+    <group>
+        <title>Przyprawy</title>
+        <product>
+            <lp>1</lp>
+            <name>Pieprz</name>
+            <number>219</number>
+            <price>0.99</price>
+        </product>
+        <product>
+            <lp>2</lp>
+            <name>Sól</name>
+            <number>56</number>
+            <price>0.99</price>
+        </product>
+        <product>
+            <lp>3</lp>
+            <name>Rozmaryn</name>
+            <number>6</number>
+            <price>1.49</price>
+        </product>
+        <product>
+            <lp>4</lp>
+            <name>Bazylia</name>
+            <number>56</number>
+            <price>1.59</price>
+        </product>
+        <product>
+            <lp>5</lp>
+            <name>Zioła prowansalskie</name>
+            <number>16</number>
+            <price>1.29</price>
+        </product>
+    </group>
+</storage>

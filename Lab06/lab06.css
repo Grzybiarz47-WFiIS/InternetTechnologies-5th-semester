@@ -1,0 +1,48 @@
+body{
+    background-color: lightblue;
+}
+p{
+    font-size: 20px;
+    clear: both;
+}
+form{
+    clear: both;
+    float: left;
+    margin: 5px; 
+}
+header{
+    float: left;
+    border: 2px solid maroon;
+    margin-bottom: 10px;
+}
+form#secondButton{
+    clear: right;
+}
+input.button{
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+input#submit{
+    background-color: greenyellow;
+}
+input#show{
+    background-color: blue;
+}
+div.alert{
+    color: maroon;
+    font-size: 15px;
+    font-weight: bold;
+}
+table{
+    clear: both;
+    border: 3px solid maroon;
+    background-color: white;
+    font-size: 20px;
+}
+tr, th, td{
+    border: 2px solid black;
+    padding: 5px;
+}

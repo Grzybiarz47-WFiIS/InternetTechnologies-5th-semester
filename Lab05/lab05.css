@@ -1,0 +1,31 @@
+body{
+    background-color: lightblue;
+}
+header{
+    border: 3px solid maroon;
+    background-color: white;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+table{
+    border: 3px solid maroon;
+    background-color: white;
+    width: auto;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+tr, th, td{
+    border: 2px solid black;
+    padding: 5px;
+}
+.wide_span_row{
+    background-color: violet;
+}
+
+
+
+
+

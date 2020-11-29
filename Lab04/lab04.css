@@ -1,0 +1,27 @@
+body{
+    background-color: lightblue;
+}
+header{
+    border: 3px solid maroon;
+    background-color: white;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 30%;
+}
+article{
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+    border: 3px solid maroon;
+    background-color: white;
+    margin: auto;
+    padding: 5px;
+}
+p{
+    font-style: italic;
+    font-size: 20px;
+}
+li{
+    font-size: 25px;
+    color: blue;
+}
