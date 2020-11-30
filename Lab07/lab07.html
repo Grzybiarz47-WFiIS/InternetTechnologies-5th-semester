@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie Ajax</title>
+    <script src="lab07.js"></script>
+    <link rel="StyleSheet" href="lab07.css" type="text/css"/>
+</head>
+    <header>
+        <p>Quiz: Jaka jest twoja ulubiona pora roku?</p>
+    </header>
+    <body>
+        <form action="#">
+            <div id="quizDiv">
+                <input type="radio" id="winter" name="season" value="winter">
+            	<label for="winter">Zima</label>
+                <p></p>
+                <input type="radio" id="spring" name="season" value="spring">
+                <label for="spring">Wiosna</label>
+                <p></p>
+                <input type="radio" id="summer" name="season" value="summer">
+                <label for="summer">Lato</label>
+                <p></p>
+                <input type="radio" id="fall" name="season" value="fall">
+            	<label for="fall">Jesień</label>
+           	</div>
+            <p></p>
+            <input type="button" value="Wyślij" onclick="sendRequest()"/>
+            <div id="alertDiv"></div>
+        </form>
+	    <div id="graphDiv"></div>
+    </body>
+</html>
