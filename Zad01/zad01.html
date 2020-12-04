@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Projekt AJAX</title>
+    <script src="zad01.js"></script>
+    <link rel="StyleSheet" href="zad01.css" type="text/css" />
+</head>
+<body>
+    <fieldset>
+        <legend>Rejestracja</legend>
+        <form action="#" onSubmit="return sendForm()">
+            <p>Wybierz przedmiot:</p>
+            <select id="subject">
+                <option value="1">Programowanie proceduralne</option>
+                <option value="2">TI</option>
+                <option value="3">Bazy danych</option>
+            </select>
+            <p>Wybierz grupę:</p>
+            <select id="group">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <p><br>Proszę podać swoje dane:<br></p>
+            <p>Nazwisko<input type="text" id="lname"></p>
+            <p>Imię<input type="text" id="name"></p>
+            <p>Indeks<input type="text" id="index"></p>
+            <p>E-mail<input type="text" id="email"></p>
+            <input type="submit" value="Wyślij" />
+        </form>
+        <div id="alert"></div>
+    </fieldset>
+</body>
+</html>
