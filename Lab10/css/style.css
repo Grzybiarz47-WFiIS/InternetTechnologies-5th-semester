@@ -1,0 +1,42 @@
+﻿body {
+    background-color: lightblue;
+}
+header {
+    border: 3px solid maroon;
+    background-color: white;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+input[type=button], input[type=submit] {
+    border: 2px solid #4CAF50;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=text], input[type=password] {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+#logoutButton {
+    border: 2px solid red;
+}
+table {
+    clear: both;
+    border: 3px solid maroon;
+    background-color: white;
+    font-size: 20px;
+}
+tr, th, td {
+    border: 2px solid black;
+    padding: 5px;
+}
