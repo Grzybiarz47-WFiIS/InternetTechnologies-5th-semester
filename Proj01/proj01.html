@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Drzewo BST</title>
+    <link rel="StyleSheet" href="proj01.css" type="text/css"/>
+    <script src="proj01.js"></script>
+</head>
+<body>
+    <header>Drzewo BST</header>
+    <article id="menu">
+        <nav>
+            <input type="button" id="toAddValue" value="Dodaj now¹ wartoœæ" onclick="addValue()"/>
+            <input type="text" id="newValue" name="newValue"/>
+            <div id="alert"></div>
+            <input type="button" id="toReset" value="Resetuj drzewo" onclick="reset()"/><br/>
+            <input type="button" id="collapse" value="Info" onclick="collapseInfo()"></input><br/> 
+            <div id="contentInfo">
+                <fieldset>
+                    <legend>Instrukcja</legend>
+                    Projekt realizuje tworzenie drzewa BST i przedstawia go w sposób graficzny.<br/>
+                    Wprowadzamy nowe wartoœci i klkaj¹c przycisk dodajemy je do drzewa.<br/>
+                    Mo¿emy usun¹æ drzewo klikaj¹c 'Resetuj'
+                </fieldset>
+            </div>
+        </nav>
+    </article>
+    <article id="whiteboard">
+        <svg width="800" height="600" id="svgBoard">
+        </svg>
+    </article>
+    <footer>Techniki internetowe 2020 Jan Zajda Projekt nr1</footer>
+</body>
+</html>
