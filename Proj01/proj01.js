@@ -6,6 +6,7 @@ const height = 600;
 const scal = 5;
 const timestep = 750;
 const y0 = 40;
+const opLevel = 10;
 
 var BST = null;
 var radius = 30;
@@ -132,10 +133,10 @@ class Tree {
         newElement.setAttribute("x2", node2.x);
         newElement.setAttribute("y2", node2.y);
         if (scalCounter == 2) {
-            newElement.setAttribute("style", "stroke:rgb(0,0,0); stroke-width:2");
+            newElement.setAttribute("style", "stroke:rgb(0,0,0); stroke-width:1");
         }
         else {
-            newElement.setAttribute("style", "stroke:rgb(0,0,0); stroke-width:1");
+            newElement.setAttribute("style", "stroke:rgb(0,0,0); stroke-width:2");
         }
         let svg = document.getElementById("svgBoard");
         setTimeout(function () { svg.insertBefore(newElement, svg.firstChild); }, time * timestep);
@@ -227,12 +228,20 @@ function reset() {
 }
 function collapseInfo() {
     var info = document.getElementById("contentInfo");
+    var interval;
     if (info.style.display == "block") {
-        info.style.display = "none";
+        info.style.opacity = 1.0;
+        interval = setInterval(function () { info.style.opacity = parseFloat(info.style.opacity) - (1.0 / opLevel); }, timestep / opLevel);
+        setTimeout(function () { info.style.display = "none"; }, timestep);
+        disableButton("collapse", 1);
     }
     else {
-        info.style.display = "block";
+        info.style.opacity = 0.0;
+        info.style.display = "block"; 
+        interval = setInterval(function () { info.style.opacity = parseFloat(info.style.opacity) + (1.0 / opLevel); }, timestep / opLevel);
+        disableButton("collapse", 1);
     }
+    setTimeout(function () { clearInterval(interval); }, timestep);
 }
 
 ///////////////////////////

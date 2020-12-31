@@ -1,9 +1,6 @@
 ﻿body {
     background: rgba(159, 92, 92, 0.52);
 }
-article {
-    float: left;
-}
 header {
     border-radius: 10px;
     border: 2px solid #4CAF50;
@@ -25,15 +22,18 @@ footer {
 }
 text {
     font-weight: bold;
-    font-family: Courier New, Courier, monospace;
+    font-family: "Courier New", "Courier", monospace;
     text-anchor: middle;
 }
 fieldset {
-    width: 70%;
+    width: 80%;
     background-color: #eeeeee;
     margin-top: 10px;
     font-size: 12px;
     display: block;
+}
+h3{
+    text-align: center;
 }
 legend {
     background-color: gray;
@@ -41,7 +41,7 @@ legend {
     padding: 5px 5px;
 }
 input {
-    width: 70%;
+    width: 100%;
     border-radius: 10px;
     border: 2px solid #4CAF50;
     margin: 2px 2px;
@@ -59,18 +59,17 @@ input[type=text] {
     box-sizing: border-box;
 }
 article#menu {
-    width: 25%;
+    width: 15%;
+    float: left;
 }
 article#whiteboard {
-    width: 60%;
+    width: 75%;
+    float: right;
 }
 div#contentInfo {
     display: none;
-    overflow: hidden;
+    width: 100%;
 }
 div#alert {
     color: red;
-}
-div#contentInfo {
-    width: 100%;
 }
