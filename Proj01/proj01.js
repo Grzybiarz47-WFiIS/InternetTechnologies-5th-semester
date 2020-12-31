@@ -5,7 +5,7 @@ const width = 800;
 const height = 600;
 const scal = 5;
 const timestep = 750;
-const y0 = 60;
+const y0 = 40;
 
 var BST = null;
 var radius = 30;
@@ -66,7 +66,7 @@ class Tree {
             }
         }
         if (node.row > 7) {
-            showAlert("Przekroczono maksymaln¹ wysokoœæ drzewa!")
+            showAlert("Przekroczono maksymalnÄ… wysokoÅ›Ä‡ drzewa!")
             return;
         }
         if ((node.x + radius > width || node.x - radius < 0 || node.y + radius > height)) {
@@ -200,10 +200,10 @@ function addValue() {
     document.getElementById("newValue").value = "";
     var valInt = Number(valStr);
     if (valStr == "") {
-        showAlert("Nie wpisano ¿adnej liczby!");
+        showAlert("Nie wpisano Å¼adnej liczby!");
     }
     else if (!Number.isInteger(valInt)) {
-        showAlert("Nale¿y wpisaæ liczbê ca³kowit¹!");
+        showAlert("NaleÅ¼y wpisaÄ‡ liczbÄ™ caÅ‚kowitÄ…!");
     }
     else {
         showAlert();
