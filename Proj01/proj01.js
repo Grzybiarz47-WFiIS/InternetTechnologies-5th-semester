@@ -4,7 +4,7 @@ function addValue() {
     var valStr = document.getElementById("newValue").value;
     document.getElementById("newValue").value = "";
     var valInt = Number(valStr);
-    if (valStr == "") {
+    if (valStr === "") {
         showAlert("Nie wpisano żadnej liczby!");
     }
     else if (!Number.isInteger(valInt)) {
@@ -12,8 +12,8 @@ function addValue() {
     }
     else {
         showAlert();
-        if (BST == null) {
-            var node = new Node(valInt)
+        if (BST === null) {
+            var node = new Node(valInt);
             node.setPos(width / 2, y0, 0);
             BST = new Tree(node);
         }
@@ -28,7 +28,7 @@ function reset() {
     margin = 40;
     fontSize = 20;
     scalCounter = 0;
-    resetSVG()
+    resetSVG();
 }
 function collapseInfo() {
     var info = document.getElementById("contentInfo");

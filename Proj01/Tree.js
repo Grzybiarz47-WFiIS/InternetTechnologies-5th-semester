@@ -9,7 +9,7 @@ class Tree {
         while (true) {
             arr.push(this.buildCompare(node, x));
             if (node.val < x.val) {
-                if (x.left == null) {
+                if (x.left === null) {
                     x.left = node;
                     node.row = x.row + 1;
                     node.y = x.y + margin * 2;
@@ -21,7 +21,7 @@ class Tree {
                 }
             }
             else {
-                if (x.right == null) {
+                if (x.right === null) {
                     x.right = node;
                     node.row = x.row + 1;
                     node.y = x.y + margin * 2;
@@ -34,7 +34,7 @@ class Tree {
             }
         }
         if (node.row > 7) {
-            showAlert("Przekroczono maksymaln� wysoko�� drzewa!")
+            showAlert("Przekroczono maksymaln� wysoko�� drzewa!");
             return;
         }
         if ((node.x + radius > width || node.x - radius < 0 || node.y + radius > height)) {
@@ -45,10 +45,10 @@ class Tree {
             resetSVG();
             this.root.y = margin;
             this.draw(this.root);
-            if (this.root.left != null) {
+            if (this.root.left !== null) {
                 this.rescale(this.root, this.root.left, false, node);
             }
-            if (this.root.right != null) {
+            if (this.root.right !== null) {
                 this.rescale(this.root, this.root.right, true, node);
             }
             arr.forEach(this.rescaleCompare);
@@ -61,14 +61,14 @@ class Tree {
         setTimeout(function () { onMouseOver = true; }, arr.length * timestep);
     }
     draw(node, parent = null, time = 0) {
-        if (parent != null) {
-            this.drawLine(parent, node, time)
+        if (parent !== null) {
+            this.drawLine(parent, node, time);
         }
         this.drawCircle(node, time);
         this.drawText(node, time);
     }
     blob(name, time) {
-        if (onMouseOver == false)
+        if (onMouseOver === false)
             return;
         var svg = document.getElementById("svgBoard");
         var elem = document.getElementById(name);
@@ -139,7 +139,7 @@ class Tree {
     }
     rescale(parent, node, flag, curNode) {
         node.y = parent.y + 2 * margin;
-        if (flag == true) {
+        if (flag === true) {
             node.x = node.x - scal;
         }
         else {
@@ -148,10 +148,10 @@ class Tree {
         if (node != curNode) {
             this.draw(node, parent);
         }
-        if (node.left != null) {
+        if (node.left !== null) {
             this.rescale(node, node.left, false, curNode);
         }
-        if (node.right != null) {
+        if (node.right !== null) {
             this.rescale(node, node.right, true, curNode);
         }
     }
