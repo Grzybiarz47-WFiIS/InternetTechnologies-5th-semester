@@ -34,7 +34,7 @@ class Tree {
             }
         }
         if (node.row > 7) {
-            showAlert("Przekroczono maksymaln¹ wysokoœæ drzewa!")
+            showAlert("Przekroczono maksymalnï¿½ wysokoï¿½ï¿½ drzewa!")
             return;
         }
         if ((node.x + radius > width || node.x - radius < 0 || node.y + radius > height)) {
@@ -122,7 +122,7 @@ class Tree {
         newElement.setAttribute("onclick", "sound()");
         setTimeout(function () { document.getElementById("svgBoard").appendChild(newElement); }, time * timestep);
     }
-    drawLine(node1, node2) {
+    drawLine(node1, node2, time) {
         let newElement = document.createElementNS(xmlns, "line");
         newElement.setAttribute("x1", node1.x);
         newElement.setAttribute("y1", node1.y);
