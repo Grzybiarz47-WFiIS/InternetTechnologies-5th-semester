@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Drzewo BST</title>
-    <link rel="StyleSheet" href="proj01.css" type="text/css"/>
+    <link rel="StyleSheet" href="proj01.css" type="text/css" />
+    <script src="params.js"></script>
+    <script src="Node.js"></script>
+    <script src="Tree.js"></script>
     <script src="proj01.js"></script>
 </head>
 <body>
@@ -15,20 +18,21 @@
             <input type="text" id="newValue" name="newValue" />
             <div id="alert"></div>
             <input type="button" id="toReset" value="Resetuj drzewo" onclick="reset()" /><br />
-            <input type="button" id="collapse" value="Info" onclick="collapseInfo()" /><br />
+            <input type="button" id="collapse" value="Instrukcja" onclick="collapseInfo()" /><br />
             <div id="contentInfo">
                 <fieldset>
                     <legend>Instrukcja</legend>
-                    Projekt realizuje tworzenie drzewa BST i przedstawia go w sposób graficzny.<br />
+                    Projekt pozwala na tworzenie drzewa BST i przedstawia je graficznie.<br />
                     Wprowadzamy nowe wartości i klikając przycisk dodajemy je do drzewa.<br />
-                    Możemy usunąć drzewo klikając 'Resetuj'
+                    Możemy usunąć drzewo klikając 'Resetuj'.<br />
+                    Najechanie na węzęł sprawi, że będzie on lepiej widoczny.
                 </fieldset>
             </div>
         </nav>
     </article>
     <article id="whiteboard">
-        <svg width="800" height="600" id="svgBoard">
-        </svg>
+        <svg width="800" height="600" id="svgBoard"></svg>
+        <audio id="sound" src="Click2-Sebastian-759472264.mp3"></audio>
     </article>
     <footer>Techniki internetowe 2020 Jan Zajda Projekt nr1</footer>
 </body>
