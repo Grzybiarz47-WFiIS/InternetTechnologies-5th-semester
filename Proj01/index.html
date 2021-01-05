@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Drzewo BST</title>
+    <link rel="StyleSheet" href="style/proj01.css" type="text/css" />
+    <script src="js/index.js"></script>
+</head>
+<body onload="description()">
+    <header>Drzewo BST</header>
+    <article id="description">
+        <fieldset>
+            <h2>Binarne drzewo poszukiwań</h2>
+            Drzewo BST jest dynamiczną strukturą danych - drzewem binarnym, 
+            w którym dla każego węzła dziecko po lewej stronie przechowuje klucz o wartości mniejszej od rodzica,
+            a dziecko po prawej przechowuje klucz o wartości większej.<br /><br />
+            Największą zaletą drzew BST jest szybkość wykonywania podstawowych operacji dodawania, 
+            usuwania i wyszukiwania węzła. Gdy drzewo jest zrównoważone (węzły są równomiernie rozłożone),
+            to złożoność takich takich operacji wynosi około logarytm od liczby węzłów.<br /><br />
+            Więcej informacji:<br />
+            <a href="https://en.wikipedia.org/wiki/Binary_search_tree">https://en.wikipedia.org/wiki/Binary_search_tree</a>
+            <a href="https://www.geeksforgeeks.org/binary-search-tree-data-structure/">https://www.geeksforgeeks.org/binary-search-tree-data-structure/</a>
+            <a href="https://www.youtube.com/watch?v=pYT9F8_LFTM&ab_channel=mycodeschool">https://www.youtube.com/watch?v=pYT9F8_LFTM&ab_channel=mycodeschool</a>
+        </fieldset>
+        <input type="button" id="animation" value="Animacja" onclick="animation()"/><br />
+        <input type="button" id="docButton" value="Dokumentacja" onclick="documentation()"/>
+    </article>
+    <footer>Techniki internetowe 2020 Jan Zajda Projekt nr1</footer>
+</body>
+</html>

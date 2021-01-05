@@ -24,10 +24,25 @@ function addValue() {
 }
 function reset() {
     BST = null;
-    radius = 30;
-    margin = 40;
-    fontSize = 20;
-    scalCounter = 0;
+    if(window.Worker) {
+        var firstWorker = new Worker("js/workers/workerExample1.js");
+        var secondWorker = new Worker("js/workers/workerExample2.js");
+        firstWorker.postMessage([radius, margin]);
+        firstWorker.onmessage = function(e) {
+            radius = e.data[0];
+            margin = e.data[1];
+        }
+        secondWorker.postMessage([fontSize, scalCounter]);
+        firstWorker.onmessage = function(e) {
+            fontSize = e.data[0];
+            scalCounter = e.data[1];
+        }
+        /*
+        radius = 30;
+        margin = 40;
+        fontSize = 20;
+        scalCounter = 0;*/
+    }
     resetSVG();
 }
 function collapseInfo() {
@@ -54,6 +69,10 @@ function sound() {
     var sound = document.getElementById("sound");
     sound.play();
 }
+function mainPage() {
+    window.location.href = "index.html";
+}
+
 
 ///////////////////////////
 
