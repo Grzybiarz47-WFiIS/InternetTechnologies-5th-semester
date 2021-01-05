@@ -10,6 +10,7 @@ function documentation() {
 function description() {
     var desc = document.getElementById("description");
     desc.style.opacity = 0.0;
+    desc.style.display = "block";
     var interval = setInterval(function () { desc.style.opacity = parseFloat(desc.style.opacity) + (1.0 / opLevel); }, timestep / opLevel);
     setTimeout(function () { clearInterval(interval); }, timestep);
 }
