@@ -78,7 +78,6 @@ article#whiteboard {
 }
 article#description {
     width: 40%;
-    display: none;
     margin: auto;
     text-align: center;
 }
