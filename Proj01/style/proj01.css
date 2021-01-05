@@ -49,21 +49,24 @@ input {
     font-size: 15px;
 }
 input[type=button] {
-    background: rgba(0, 255, 0, 0.4);
+    background: rgba(0, 255, 0, 0.3);
     color: black;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
 }
+input[type=button]:disabled {
+    background: rgba(0, 255, 0, 0.15);
+}
 input[type=text] {
     box-sizing: border-box;
 }
-input#toAddValue, input#toReset{
+input#toAddValue, input#toReset {
     background: rgba(255, 0, 0, 0.3);
 }
-input:disabled{
-    background: rgba(255, 0, 0, 0.0);
+input#toAddValue:disabled, input#toReset:disabled {
+    background: rgba(255, 0, 0, 0.15);
 }
 article#menu {
     width: 15%;
