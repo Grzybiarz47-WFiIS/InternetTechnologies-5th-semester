@@ -4,6 +4,7 @@ function showDocumentation(){
 function showSurvey(){
     content = document.getElementById("content");
     cleanContent(content);
+    cleanContent(document.getElementById("alert"));
 
     formDiv = document.createElement("div");
     formDiv.setAttribute("id", "insertForm");
@@ -39,11 +40,12 @@ function showSurvey(){
 function showLogin(){
     content = document.getElementById("content");
     cleanContent(content);
+    cleanContent(document.getElementById("alert"));
 
     formDiv = document.createElement("div");
     formDiv.setAttribute("id", "loginForm");
     form = document.createElement("form");
-    form.setAttribute("onsubmit", "loginUser()")
+    form.setAttribute("onsubmit", "_login(); return false;");
 
     form.innerHTML = `
     <fieldset>
@@ -61,11 +63,12 @@ function showLogin(){
 function showRegister(){
     content = document.getElementById("content");
     cleanContent(content);
+    cleanContent(document.getElementById("alert"));
 
     formDiv = document.createElement("div");
     formDiv.setAttribute("id", "registerForm");
     form = document.createElement("form");
-    form.setAttribute("onsubmit", "registerUser()")
+    form.setAttribute("onsubmit", "_register(); return false;");
 
     form.innerHTML = `
     <fieldset>

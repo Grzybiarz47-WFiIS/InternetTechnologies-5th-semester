@@ -64,7 +64,7 @@ button{
     color: black; 
     border: 2px solid blueviolet;
 }  
-button:hover {
+button:hover{
     background-color: blueviolet;
     color: white;
 }
@@ -78,3 +78,10 @@ div#insertForm, div#registerForm, div#loginForm{
    display: inline-block; 
    margin: 20px;
 }  
+button#logout{
+    border: 2px solid red;
+}
+button#logout:hover{
+    background-color: red;
+    color: white;
+}

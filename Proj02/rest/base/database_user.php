@@ -25,6 +25,14 @@ class DatabaseUser{
         return ($result[0][0] == 1 ? 'true' : 'false');
     }
 
+    public function find_user($data){
+        $this->sth = self::$db->prepare('SELECT EXISTS(SELECT * FROM osoba WHERE login = :login) as val');
+        $this->sth->bindValue(':login', $data['login'], PDO::PARAM_STR);
+        $this->sth->execute();
+        $result = $this->sth->fetchAll();
+        return ($result[0][0] == 1 ? 'true' : 'false');
+    }
+
     public function insert($data){
         $this->sth = self::$db->prepare('INSERT INTO osoba VALUES (:login, :pass)');
         $this->sth->bindValue(':login', $data['login'], PDO::PARAM_STR); 

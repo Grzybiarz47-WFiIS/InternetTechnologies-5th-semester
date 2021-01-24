@@ -47,7 +47,7 @@ function saveOffline(){
     }
 }
 function readOffline(){
-
+    cleanContent(document.getElementById("alert"));
     var table1 = document.createElement("table");
     var table2 = document.createElement("table");
     var table3 = document.createElement("table");
