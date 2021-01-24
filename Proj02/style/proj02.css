@@ -1,0 +1,80 @@
+/* main */
+body{
+    background: rgba(159, 92, 92, 0.5);
+}
+header{
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+footer{
+    width: 90%;
+    background: rgba(0, 0, 0, 0.3);
+    height: 40px;
+    position: fixed;
+    left: 5%;
+    bottom: 0px;
+    text-align: center;
+}
+text{
+    font-weight: bold;
+    font-family: "Courier New", "Courier", monospace;
+    text-anchor: middle;
+}
+/* fields */
+fieldset{
+    background-color: white;
+}
+table, td, th{
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+table{
+    width: 30%;
+    float: left;
+    border-collapse: collapse;
+    margin: 10px;
+    margin-top: 10px; 
+}
+legend{
+    background-color: darkgray;
+    border: 1px solid black;
+    padding: 3px;
+}
+/* buttons */
+button{
+    border-radius: 10px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid blueviolet;
+}  
+button:hover {
+    background-color: blueviolet;
+    color: white;
+}
+/* input */
+input, select{
+    width: 175px;
+    margin: 10px;
+}
+/* with id */
+div#insertForm, div#registerForm, div#loginForm{
+   display: inline-block; 
+   margin: 20px;
+}  

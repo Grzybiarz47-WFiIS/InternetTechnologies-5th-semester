@@ -1,0 +1,8 @@
+RewriteEngine On
+ 
+RewriteBase /~8zajda/Labs/Proj02/rest/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^(.*)$ app/api.php?request=$1 [QSA,NC,L]
+ 

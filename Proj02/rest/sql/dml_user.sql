@@ -1,0 +1,1 @@
+insert into osoba (login, pass) values ('grzybiarz47', '7f30eefe5c51e1ae0939dab2051db75f');

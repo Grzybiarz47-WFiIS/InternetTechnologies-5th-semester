@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ankieta</title>
+        <link rel="StyleSheet" href="style/proj02.css" type="text/css" />
+        <script src="js/present.js"></script> 
+        <script src="js/store.js"></script> 
+    </head>
+    <body>   
+        <header>Ankieta zanieczyszczenie powietrza (tryb off-line)</header>
+        <div id="menu">
+            <button id="insert" name="insert" onclick=showSurvey()>Wprowadź dane</button>
+            <button id="show" name="show" onclick=readOffline()>Przeglądaj dane off-line</button>
+            <button id="login" name="login" onclick=showLogin()>Logowanie</button>
+            <button id="register" name="register" onclick=showRegister()>Rejestracja</button>
+            <button id="docs" name="docs" onclick=showDocumentation()>Dokumentacja</button>
+        </div>
+        <div id="content"></div>
+        <div id="ref"></div>
+        <footer>
+            <b>Przykładowe źródło danych: <a href=http://monitoring.krakow.pios.gov.pl/stacje>Dane pomiarowe z Małopolski</a></b><br>
+            Techniki internetowe 2020 Jan Zajda Projekt nr2 (tryb off-line)
+        </footer>
+    </body>
+</html>
