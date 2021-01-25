@@ -1,5 +1,3 @@
-var activeSession = false;
-
 function getRequest(){
     if(window.ActiveXObject){
         return new ActiveXObject("Microsoft.XMLHTTP");
@@ -17,7 +15,7 @@ function _login(){
     var request = getRequest();
     request.onreadystatechange = function(){
         if(request.readyState == 4){
-            if (request.status == 200) {  
+            if (request.status == 200){  
                 if(request.responseText.trim() == 'true'){
                     sessionStorage.setItem('sessionActive', 'true');
                     _index();
@@ -43,7 +41,7 @@ function _register(){
         var request = getRequest();
         request.onreadystatechange = function(){
             if(request.readyState == 4){
-                if (request.status == 200) {  
+                if (request.status == 200){  
                     if(request.responseText.trim() == 'true'){
                         sessionStorage.setItem('sessionActive', 'true');
                         _index();
@@ -102,5 +100,52 @@ function _index(){
         }
         request.open('POST', "rest/index", true);
         request.send(null);
+    }
+}
+function _save(data){
+    if(!data[0].length && !data[1].length && !data[2].length){
+        document.getElementById("content").innerHTML = "<h2>Brak danych do zapisania</h2>";
+    } 
+    else{
+        dispatch = JSON.stringify(data);
+        var request = getRequest();
+        request.onreadystatechange = function(){
+            if(request.readyState == 4){
+                if(request.status == 200){
+                    if(request.responseText.trim() == 'true'){
+                        document.getElementById("content").innerHTML = "<h2>Dane zostały zapisane</h2>";
+                        cleanOffline();
+                    }
+                    else{
+                        document.getElementById("content").innerHTML = request.responseText;
+                    }
+                }
+                else{ 
+                    alert("Wystąpił błąd w czasie połączenia!");
+                } 
+            }
+        }
+        request.open('POST', "rest/save", true);
+        request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        request.send(dispatch); 
+    }
+}
+function _load(){
+    var mode = Number(document.getElementById("schart").value);
+    if(mode > 0){
+        var request = getRequest();
+        request.onreadystatechange = function(){
+            if(request.readyState == 4){
+                if(request.status == 200){
+                    document.getElementById("content").innerHTML += request.responseText;
+                }
+                else{
+                    alert("Wystąpił błąd w czasie połączenia!");
+                }
+            }
+        }
+        request.open('POST', "rest/load", true);
+        request.send(mode);
     }
 }

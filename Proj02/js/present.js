@@ -29,7 +29,7 @@ function showSurvey(){
             <option value="2">Dwutlenek azotu (NO&#8322)</option>
             <option value="3">Pył PM10</option>
         </select><br>
-        <label for="mval">Wartość</label><br>
+        <label for="mval">Wartość średnia</label><br>
         <input type="number" id="mval" name="mval" min="0" /><br>
         <input type="submit" value="Dodaj" />
     </fieldset>`;
@@ -82,6 +82,27 @@ function showRegister(){
 
     formDiv.appendChild(form);
     content.appendChild(formDiv);
+}
+function showSelect(){
+    content = document.getElementById("content");
+    cleanContent(content);
+    cleanContent(document.getElementById("alert"));
+
+    selectDiv = document.createElement("div");
+    selectDiv.setAttribute("id", "selectChart");
+
+    selectDiv.innerHTML = `
+    <fieldset>
+        <legend>Wybierz rodzaj zanieczyszczeń</legend>
+        <select id="schart" name="schart" onchange=_load()>
+            <option selected="selected" value="0">Wybierz</option>
+            <option value="1">Dwutlenek siarki (SO&#8322)</option>
+            <option value="2">Dwutlenek azotu (NO&#8322)</option>
+            <option value="3">Pył PM10</option>
+        </select><br>
+    </fieldset>`;
+
+    content.appendChild(selectDiv);
 }
 function cleanContent(content){
     while(content.firstChild){

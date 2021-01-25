@@ -22,7 +22,7 @@ request.onerror = function(e){
 
 request.onsuccess = function(e){
     db = e.target.result;
-};    
+}; 
 
 function saveOffline(){
     date = convertDate(new Date(document.getElementById("mdate").value));
@@ -34,15 +34,19 @@ function saveOffline(){
     }
     else{
         data = {tabela: type, lokalizacja: getLocalization(loc), data_pomiaru: date, wartosc: val};
+
         let tx = db.transaction(['AnwserStore'], 'readwrite');
         let store = tx.objectStore('AnwserStore');
+
         store.put(data);
+
         tx.oncomplete = function(){ 
             console.log('This is the end - data saved into database');
-        }
+        };
         tx.onerror = function(e) {
             console.log("There was an error: " + e.target.errorCode);
-        }
+        };
+        
         document.getElementById("content").innerHTML = "<h2>Dodano rekord do lokalnej bazy</h2>";
     }
 }
@@ -85,10 +89,58 @@ function readOffline(){
             content.appendChild(table2);
             content.appendChild(table3);
         }
-    }
+    };
     q.onerror = function(event) {
       alert('error getting note 1 ' + event.target.errorCode);
-    }
+    };
+}
+function extractOffline(){
+    var table1 = Array();
+    var table2 = Array();
+    var table3 = Array();
+
+    let tx = db.transaction(['AnwserStore'], 'readonly');
+    let store = tx.objectStore('AnwserStore');
+
+    let q = store.openCursor();
+
+    q.onsuccess = function(e) {
+        let cursor = e.target.result;  
+        if (cursor != null) {
+            res = cursor.value;
+            switch(res.tabela){
+                case 1:
+                    table1.push({data_pomiaru: res.data_pomiaru, lokalizacja: res.lokalizacja, wartosc: res.wartosc});
+                break;
+                case 2:
+                    table2.push({data_pomiaru: res.data_pomiaru, lokalizacja: res.lokalizacja, wartosc: res.wartosc});
+                break;
+                case 3:
+                    table3.push({data_pomiaru: res.data_pomiaru, lokalizacja: res.lokalizacja, wartosc: res.wartosc});
+                break;
+            }
+            cursor.continue();
+        }
+        else{
+            _save(Array(table1, table2, table3));
+        }
+    };
+    q.onerror = function(event) {
+      alert('error getting note 1 ' + event.target.errorCode);
+    };
+}
+function cleanOffline(){
+    let tx = db.transaction(['AnwserStore'], 'readwrite');
+    let store = tx.objectStore('AnwserStore');
+
+    var request = store.clear();
+
+    request.onsuccess = function(e){
+        console.log('This is the end - database cleared');
+    };
+    request.onerror = function(e){
+        console.log("There was an error: " + e.target.errorCode);
+    };
 }
 function getLocalization(loc){
     var ans = "";

@@ -25,9 +25,9 @@ class Database{
 
     public function insert($tablename, $data){
        $this->sth = self::$db->prepare('INSERT INTO '. $tablename .' VALUES (:data_pomiaru, :lokalizacja, :wartosc)');
-       $this->sth->bindValue(':data_pomiaru', $data['date'], PDO::PARAM_STR); 
-       $this->sth->bindValue(':lokalizacja', $data['localization'], PDO::PARAM_STR); 
-       $this->sth->bindValue(':wartosc', $data['value'], PDO::PARAM_STR); 
+       $this->sth->bindValue(':data_pomiaru', $data['data_pomiaru'], PDO::PARAM_STR); 
+       $this->sth->bindValue(':lokalizacja', $data['lokalizacja'], PDO::PARAM_STR); 
+       $this->sth->bindValue(':wartosc', $data['wartosc'], PDO::PARAM_STR); 
        $response = ($this->sth->execute() ? 'true' : 'false' );
        return $response; 
     }
@@ -35,9 +35,9 @@ class Database{
     public function update($tablename, $data){
         $this->sth = self::$db->prepare('UPDATE '. $tablename .' SET wartosc = :wartosc 
                                          WHERE lokalizacja = :lokalizacja AND data_pomiaru = :data_pomiaru');
-        $this->sth->bindValue(':wartosc', $data['value'], PDO::PARAM_STR); 
-        $this->sth->bindValue(':lokalizacja', $data['localization'], PDO::PARAM_STR); 
-        $this->sth->bindValue(':data_pomiaru', $data['date'], PDO::PARAM_STR); 
+        $this->sth->bindValue(':wartosc', $data['wartosc'], PDO::PARAM_STR); 
+        $this->sth->bindValue(':lokalizacja', $data['lokalizacja'], PDO::PARAM_STR); 
+        $this->sth->bindValue(':data_pomiaru', $data['data_pomiaru'], PDO::PARAM_STR); 
         $response = ($this->sth->execute() ? 'true' : 'false');
         return $response; 
      }
@@ -45,8 +45,8 @@ class Database{
     public function find($tablename, $data){
         $this->sth = self::$db->prepare('SELECT EXISTS(SELECT * FROM '. $tablename .' WHERE
                                          lokalizacja = :lokalizacja AND data_pomiaru = :data_pomiaru) as val');
-        $this->sth->bindValue(':lokalizacja', $data['localization'], PDO::PARAM_STR);
-        $this->sth->bindValue(':data_pomiaru', $data['date'], PDO::PARAM_STR); 
+        $this->sth->bindValue(':lokalizacja', $data['lokalizacja'], PDO::PARAM_STR);
+        $this->sth->bindValue(':data_pomiaru', $data['data_pomiaru'], PDO::PARAM_STR); 
         $this->sth->execute();
         $result = $this->sth->fetchAll();
         return ($result[0][0] == 1 ? 'true' : 'false');

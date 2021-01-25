@@ -6,17 +6,15 @@ error_reporting(E_ALL);
 
 require_once("rest.php");
 require_once("view.php");
-require_once("../base/database.php");
 require_once("../log/log.php");
+require_once("../service/rwjson.php");
     
 class API extends REST {
      
-    private $db;
     private $v;
      
     public function __construct(){
-        parent::__construct();     
-        $this->db = new Database();     
+        parent::__construct();       
         $this->v = new View('base');
         $this->v->content = "";
         $this->v->alert = "";
@@ -33,8 +31,12 @@ class API extends REST {
     }
 
     private function _index(){
-        if($this->isLogged()){
+        if($this->method != "POST") {
+            $this->response("ERROR 405", 405);
+        }
+        else if($this->isLogged()){
             $this->content_type = "text/html";
+            $this->v->menu = file_get_contents('../template/menu.tpl');
             $this->response($this->v);
         }
         else{
@@ -43,33 +45,51 @@ class API extends REST {
     }
 
     private function _save(){
-        if($this->isLogged()){
-            $this->content_type = "text/html";
-            $this->response($this->v);
+        if($this->method != "POST") {
+            $this->response("ERROR 405", 405);
+        }
+        else if(!$this->isLogged()){
+            $this->response("ERROR 403", 403);
+        }
+        else if(empty($this->request)){
+            $this->response("ERROR 400", 400);
         }
         else{
-            $this->response("ERROR 403", 403);
+            try{
+                $json_data = json_decode($this->request, true);
+                $service = new RWJSON();
+                $this->response($service->saveJSON($json_data));
+            }
+            catch(Exception $e){
+                $this->response("ERROR 400", 400);
+            }
         }
     }
  
     private function _load(){
-        // $v->menu = file_get_contents('../template/menu.tpl');
-        // $v = new View('base');
-        // $v->menu = 'MENU';
-        // $data = $this->db->select('pm10');
-        // $v->content = $data[0]['data_pomiaru'];
-        if($this->isLogged()){
-            $this->content_type = "text/html";
-            $this->response($this->v);
+        if($this->method != "POST") {
+            $this->response("ERROR 405", 405);
+        }
+        else if(!$this->isLogged()){
+            $this->response("ERROR 403", 403);
+        }
+        else if(empty($this->request)){
+            $this->response("ERROR 400", 400);
         }
         else{
-            $this->response("ERROR 403", 403);
+            try{
+                $service = new RWJSON();
+                $this->response($service->readJSON(intval($this->request)));
+            }
+            catch(Exception $e){
+                $this->response("ERROR 400", 400);
+            }
         }
     }
 
     private function _register(){
         if($this->method != "POST") {
-            $this->response("ERROR 406", 406);
+            $this->response("ERROR 405", 405);
         }
         else if(empty($this->request)){
             $this->response("ERROR 400", 400);
@@ -91,7 +111,7 @@ class API extends REST {
 
     private function _login(){
         if($this->method != "POST") {
-            $this->response("ERROR 406", 406);
+            $this->response("ERROR 405", 405);
         }
         else if(empty($this->request)){
             $this->response("ERROR 400", 400);
@@ -112,7 +132,10 @@ class API extends REST {
     }
 
     private function _logout(){
-        if($this->isLogged()){
+        if($this->method != "POST") {
+            $this->response("ERROR 405", 405);
+        }
+        else if($this->isLogged()){
             unset($_SESSION['auth']);
             unset($_SESSION['user']); 
             session_destroy();

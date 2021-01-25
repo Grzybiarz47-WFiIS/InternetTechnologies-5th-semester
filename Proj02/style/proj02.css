@@ -4,7 +4,7 @@ body{
 }
 header{
     border-radius: 10px;
-    border: 2px solid #4CAF50;
+    border: 2px solid blue;
     background-color: white;
     padding: 10px;
     margin-bottom: 10px;
@@ -74,7 +74,7 @@ input, select{
     margin: 10px;
 }
 /* with id */
-div#insertForm, div#registerForm, div#loginForm{
+div#insertForm, div#registerForm, div#loginForm, div#selectChart{
    display: inline-block; 
    margin: 20px;
 }  
@@ -83,5 +83,16 @@ button#logout{
 }
 button#logout:hover{
     background-color: red;
-    color: white;
+}
+button#docs{
+    border: 2px solid darkblue;
+}
+button#docs:hover{
+    background-color: darkblue;
+}
+button#login, button#register{
+    border: 2px solid green;
+}
+button#login:hover, button#register:hover{
+    background-color: green;
 }
