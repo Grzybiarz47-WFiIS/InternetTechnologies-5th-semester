@@ -73,6 +73,11 @@ input, select{
     width: 175px;
     margin: 10px;
 }
+/* with class */
+div.chart{
+    float: right;
+    margin: 50px;
+}
 /* with id */
 div#insertForm, div#registerForm, div#loginForm, div#selectChart{
    display: inline-block; 

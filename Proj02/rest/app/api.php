@@ -8,6 +8,7 @@ require_once("rest.php");
 require_once("view.php");
 require_once("../log/log.php");
 require_once("../service/rwjson.php");
+require_once("../chart/chart.php");
     
 class API extends REST {
      
@@ -79,7 +80,12 @@ class API extends REST {
         else{
             try{
                 $service = new RWJSON();
-                $this->response($service->readJSON(intval($this->request)));
+                $chart = new Chart();
+                $data1 = $service->readJSON(intval($this->request), 1);
+                $data2 = $service->readJSON(intval($this->request), 2);
+                $data3 = $service->readJSON(intval($this->request), 3);
+                $this->content_type = "text/html";
+                return $this->response($chart->draw($data1, 'Skawina') . $chart->draw($data2, 'Nowa Huta') . $chart->draw($data3, 'Kraków-Kurdwanów'));
             }
             catch(Exception $e){
                 $this->response("ERROR 400", 400);

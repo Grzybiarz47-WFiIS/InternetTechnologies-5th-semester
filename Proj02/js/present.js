@@ -14,7 +14,7 @@ function showSurvey(){
     <fieldset>
         <legend>Wprawadź dane pomiarowe</legend>
         <label for="mdate">Data pomiaru</label><br>
-        <input type="date" id="mdate" name="mdate" value="2021-01-30"/><br>
+        <input type="date" id="mdate" name="mdate" min="2021-01-01" value="2021-01-30"/><br>
         <label for="mloc">Lokalizacja stacji pomiarowej</label><br>
         <select id="mloc" name="mloc">
             <option selected="selected" value="0">Wybierz</option>
@@ -30,12 +30,14 @@ function showSurvey(){
             <option value="3">Pył PM10</option>
         </select><br>
         <label for="mval">Wartość średnia</label><br>
-        <input type="number" id="mval" name="mval" min="0" /><br>
+        <input type="number" id="mval" name="mval" min="0" max="1000" /><br>
         <input type="submit" value="Dodaj" />
     </fieldset>`;
     
     formDiv.appendChild(form);
     content.appendChild(formDiv);
+
+    document.getElementById("mdate").setAttribute("max", convertDate(new Date()));
 }
 function showLogin(){
     content = document.getElementById("content");

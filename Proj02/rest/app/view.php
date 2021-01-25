@@ -21,7 +21,7 @@ class View{
     public function __get($key){
         return $this->data[$key];
     }
-     
+    
     public function __toString(){    
         extract($this->data);
         ob_start();

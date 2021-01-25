@@ -138,6 +138,10 @@ function _load(){
         request.onreadystatechange = function(){
             if(request.readyState == 4){
                 if(request.status == 200){
+                    var content = document.getElementById("content");
+                    while(content.firstChild != content.lastChild){
+                        content.removeChild(content.lastChild);
+                    }
                     document.getElementById("content").innerHTML += request.responseText;
                 }
                 else{

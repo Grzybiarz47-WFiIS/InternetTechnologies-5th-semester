@@ -17,11 +17,11 @@ class RWJSON{
         return 'true';
     }
 
-    public function readJSON($option){
-        $table = $this->db->select($this->getTablename($option));
-        $res = "";
+    public function readJSON($option, $localization){
+        $table = $this->db->select($this->getTablename($option), $this->getLocalization($localization));
+        $res = array();
         foreach($table as $row){
-            $res = $res . $row['0'] . '::' . $row['1'] . '::' . $row['2'] . '||';
+            $res[] = array('x' => substr($row['0'], -5), 'y' => $row['2']);
         }
         return $res;
     }
@@ -42,6 +42,14 @@ class RWJSON{
         1 => 'dwutlenek_siarki', 
         2 => 'dwutlenek_azotu',  
         3 => 'pm10');
+        return $tablelist[$option];
+    }
+
+    private function getLocalization($option){
+        $tablelist = array(
+        1 => 'Skawina', 
+        2 => 'Nowa Huta',  
+        3 => 'Kraków-Kurdwanów');
         return $tablelist[$option];
     }
 }

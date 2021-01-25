@@ -16,8 +16,9 @@ class Database{
         self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     }
 
-    public function select($tablename){
-        $this->sth = self::$db->prepare('SELECT * FROM '. $tablename .' ORDER BY date(data_pomiaru)');
+    public function select($tablename, $localization){
+        $this->sth = self::$db->prepare('SELECT * FROM '. $tablename .' WHERE lokalizacja = :lokalizacja ORDER BY date(data_pomiaru)');
+        $this->sth->bindValue(':lokalizacja', $localization, PDO::PARAM_STR); 
         $this->sth->execute();
         $result = $this->sth->fetchAll();
         return $result;

@@ -1,0 +1,40 @@
+.graph .grid-title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    fill: black;
+}
+.graph .labels.x-labels{
+    text-anchor: middle;
+}  
+.graph .labels.y-labels{
+    text-anchor: end;
+}  
+.graph{
+    height: 500px;
+    width: 800px;
+}
+.graph .grid {
+    stroke: #ccc;
+    stroke-dasharray: 0;
+    stroke-width: 1;
+}
+.labels{
+    font-size: 13px;
+}
+.label-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    fill: black;
+}
+circle{
+    fill: red;
+    stroke-width: 1; 
+}
+polyline{
+    fill: none;
+    stroke: darkblue;
+    stroke-width: 3;
+}
