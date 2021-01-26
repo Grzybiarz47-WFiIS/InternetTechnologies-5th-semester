@@ -39,8 +39,8 @@
                     $circles = "";
                     $line = '<polyline points="';
                     for ($i = 0; $i < $num; $i++){
-                        $circles = $circles .'<circle cx="'. strval(100 + $i * $xdiff) .'" cy="'. strval(440 - 340 * $points[$i]) .'" r="4"></circle>'; 
-                        $line = $line .' '. strval(100 + $i * $xdiff) .','. strval(440 - 340 * $points[$i]);
+                        $circles = $circles .'<circle cx="'. strval(100 + $i * $xdiff) .'" cy="'. strval(440 - 415 * $points[$i]) .'" r="4"></circle>'; 
+                        $line = $line .' '. strval(100 + $i * $xdiff) .','. strval(440 - 415 * $points[$i]);
                     }
                     $line = $line .'"/>';
                     echo $line;

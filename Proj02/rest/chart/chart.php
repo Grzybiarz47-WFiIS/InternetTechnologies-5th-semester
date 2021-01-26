@@ -27,7 +27,7 @@ class Chart{
             if($row['y'] > $limit)
                 $limit = $row['y'];
         }
-        return $limit + 10;
+        return $limit;
     }
 
     private function findxLabels($data){

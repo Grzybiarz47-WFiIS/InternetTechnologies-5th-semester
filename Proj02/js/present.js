@@ -31,6 +31,10 @@ function showSurvey(){
         </select><br>
         <label for="mval">Wartość średnia</label><br>
         <input type="number" id="mval" name="mval" min="0" max="1000" /><br>
+        <b>Poziomy dopuszczalne:</b><br>
+        SO&#8322 - 125&mu;g/m&sup3;<br>
+        NO&#8322 - 200&mu;g/m&sup3;<br>
+        PM10 - 50&mu;g/m&sup3;<br>
         <input type="submit" value="Dodaj" />
     </fieldset>`;
     
