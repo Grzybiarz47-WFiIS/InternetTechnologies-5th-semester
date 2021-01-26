@@ -28,8 +28,11 @@ class REST{
             case "GET":
                 $this->request = $this->cleanInput($_GET);
                 break;
+ 	     	case "DELETE":
+        		$this->_request = $this->cleanInput($_GET);
+                break;
             default:
-                $this->response('Method not allowed', 405);
+                $this->response('ERROR 405', 405);
                 break;
         }
     }     

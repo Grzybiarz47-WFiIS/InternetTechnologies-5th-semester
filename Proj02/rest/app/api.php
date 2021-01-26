@@ -1,8 +1,8 @@
 <?php
 
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once("rest.php");
 require_once("view.php");
@@ -32,7 +32,7 @@ class API extends REST {
     }
 
     private function _index(){
-        if($this->method != "POST") {
+        if($this->method != "GET") {
             $this->response("ERROR 405", 405);
         }
         else if($this->isLogged()){
@@ -138,7 +138,7 @@ class API extends REST {
     }
 
     private function _logout(){
-        if($this->method != "POST") {
+        if($this->method != "DELETE") {
             $this->response("ERROR 405", 405);
         }
         else if($this->isLogged()){

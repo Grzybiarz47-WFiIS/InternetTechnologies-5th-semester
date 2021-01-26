@@ -78,7 +78,7 @@ function _logout(){
             }
         }
     }
-    request.open('POST', "rest/logout", true);
+    request.open('DELETE', "rest/logout", true);
     request.send(null);
 }
 function _index(){
@@ -98,7 +98,7 @@ function _index(){
                 }
             }
         }
-        request.open('POST', "rest/index", true);
+        request.open('GET', "rest/index", true);
         request.send(null);
     }
 }
