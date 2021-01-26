@@ -1,8 +1,8 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 require_once("rest.php");
 require_once("view.php");
@@ -149,12 +149,6 @@ class API extends REST {
         }
         else{
             $this->response("ERROR 403", 403);
-        }
-    }
- 
-    private function json($data){
-        if(is_array($data)){
-            return json_encode($data);
         }
     }
 
