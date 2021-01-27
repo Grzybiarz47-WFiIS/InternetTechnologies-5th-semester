@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zad02</title>
+        <script src="rest.js"></script> 
+    </head>
+    <body>   
+        <div id="menu">
+            <button onclick=list_cat()>Lista kategorii</button>
+            <form action="#">
+                <fieldset>
+                    <legend>Dodaj kategorię</legend>
+                    <input type="text" id="name" name="name" /><br>
+                    <input type="button" value="Wyślij" onclick=insert_cat(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Usuń kategorię</legend>
+                    <input type="text" id="name" name="name" /><br>
+                    <input type="button" value="Wyślij" onclick=del_cat(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Dodaj książkę</legend>
+                    ID
+                    <input type="text" id="id" name="id" /><br>
+                    Kategoria
+                    <input type="text" id="cat" name="cat" /><br>
+                    Autor
+                    <input type="text" id="author" name="author" /><br>
+                    Tytuł
+                    <input type="text" id="title" name="title" /><br>
+                    Wydawca
+                    <input type="text" id="publisher" name="publisher" /><br>
+                    <input type="" value="Wyślij" onclick=insert_book(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Usuń książkę</legend>
+                    ID
+                    <input type="text" id="id" name="id" /><br>
+                    <input type="button" value="Wyślij" onclick=del_book(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Wyszukaj po kategorii</legend>
+                    <input type="text" id="name" name="name" /><br>
+                    <input type="button" value="Wyślij" onclick=select_book_by_cat(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Wyszukaj po id</legend>
+                    <input type="text" id="id" name="id" /><br>
+                    <input type="button" value="Wyślij" onclick=select_book_by_id(this.form) />
+                </fieldset>
+            </form>
+        </div>
+        <div id="content"></div>
+    </body>
+</html>

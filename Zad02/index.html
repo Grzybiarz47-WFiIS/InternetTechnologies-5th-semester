@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Zad02</title>
+        <script src="rest.js"></script> 
+    </head>
+    <body>   
+        <div id="menu">
+            <button onclick=list_cat()>Lista kategorii</button>
+            <form action="#">
+                <fieldset>
+                    <legend>Dodaj kategorię</legend>
+                    <input type="text" id="name" name="name" /><br>
+                    <input type="button" value="Wyślij" onclick=insert_cat(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Dodaj zadanie</legend>
+                    Tytuł
+                    <input type="text" id="title" name="title" /><br>
+                    Kategoria
+                    <input type="text" id="cat" name="cat" /><br>
+                    Status
+                    <input type="text" id="status" name="status" /><br>
+                    Treść
+                    <input type="text" id="con" name="con" /><br>
+                    Data wprowadzenia
+                    <input type="date" id="start" name="start" /><br>
+                    Data zakończenia
+                    <input type="date" id="end" name="end" /><br>
+                    <input type="button" value="Wyślij" onclick=insert_task(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Wyszukaj zadanie po kategorii</legend>
+                    <input type="text" id="cat" name="cat" /><br>
+                    <input type="button" value="Wyślij" onclick=select_by_cat(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Wyszukaj zadanie po id</legend>
+                    <input type="text" id="id" name="id" /><br>
+                    <input type="button" value="Wyślij" onclick=select_by_id(this.form) />
+                </fieldset>
+            </form>
+            <form action="#">
+                <fieldset>
+                    <legend>Usuń zadanie</legend>
+                    ID
+                    <input type="text" id="id" name="id" /><br>
+                    <input type="button" value="Wyślij" onclick=del_task(this.form) />
+                </fieldset>
+            </form>
+        </div>
+        <div id="content"></div>
+    </body>
+</html>
