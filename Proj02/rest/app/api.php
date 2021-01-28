@@ -68,7 +68,7 @@ class API extends REST {
     }
  
     private function _load(){
-        if($this->method != "POST") {
+        if($this->method != "GET") {
             $this->response("ERROR 405", 405);
         }
         else if(!$this->isLogged()){
@@ -81,9 +81,9 @@ class API extends REST {
             try{
                 $service = new RWJSON();
                 $chart = new Chart();
-                $data1 = $service->readJSON(intval($this->request), 1);
-                $data2 = $service->readJSON(intval($this->request), 2);
-                $data3 = $service->readJSON(intval($this->request), 3);
+                $data1 = $service->readJSON(intval($this->args[0]), 1);
+                $data2 = $service->readJSON(intval($this->args[0]), 2);
+                $data3 = $service->readJSON(intval($this->args[0]), 3);
                 $this->content_type = "text/html";
                 return $this->response($chart->draw($data1, 'Skawina') . $chart->draw($data2, 'Nowa Huta') . $chart->draw($data3, 'Kraków-Kurdwanów'));
             }

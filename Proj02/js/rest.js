@@ -149,7 +149,7 @@ function _load(){
                 }
             }
         }
-        request.open('POST', "rest/load", true);
-        request.send(mode);
+        request.open('GET', "rest/load/" + String(mode), true);
+        request.send(null);
     }
 }

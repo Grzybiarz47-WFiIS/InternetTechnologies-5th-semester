@@ -22,8 +22,7 @@ class REST{
 
         switch($this->method){
             case "POST":
-                $this->request = file_get_contents("php://input");
-                $this->request = $this->cleanInput($this->request);
+                $this->request = $this->cleanInput(file_get_contents("php://input"));
                 break;
             case "GET":
                 $this->request = $this->cleanInput($_GET);
