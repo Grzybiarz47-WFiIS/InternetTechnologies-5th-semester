@@ -100,9 +100,6 @@ class API extends REST {
         else if(empty($this->request)){
             $this->response("ERROR 400", 400);
         }
-        else if($this->isLogged()){
-            $this->response("ERROR 403", 403);
-        }
         else{
             try{
                 $json_data = json_decode($this->request, true);
@@ -121,9 +118,6 @@ class API extends REST {
         }
         else if(empty($this->request)){
             $this->response("ERROR 400", 400);
-        }
-        else if($this->isLogged()){
-            $this->response("ERROR 403", 403);
         }
         else{
             try{
